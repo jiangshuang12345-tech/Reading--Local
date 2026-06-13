@@ -869,7 +869,18 @@ function selectCfg(el,groupId){
 // ═══════════════════════════════════════
 //  SCREEN 3: GENERATION ANIMATION
 // ═══════════════════════════════════════
+let preloadedScenes=[];
+function preloadScenes(){
+  preloadedScenes=[];
+  for(let i=1;i<=8;i++){
+    const im=new Image();
+    im.src='assets/page'+i+'.jpg';
+    preloadedScenes.push(im);
+  }
+}
+
 function startGenAnimation(){
+  preloadScenes();
   const fill=document.getElementById('genFill');
   const pct=document.getElementById('genPercent');
   const status=document.getElementById('genStatus');
