@@ -949,8 +949,9 @@ function renderPage(){
   document.getElementById('sceneBg').style.background=pg.bg;
   const sceneImg=document.getElementById('sceneImg');
   sceneImg.classList.remove('show');
-  sceneImg.src='assets/page'+(currentPage+1)+'.png';
   sceneImg.onload=()=>sceneImg.classList.add('show');
+  sceneImg.onerror=()=>sceneImg.classList.remove('show');
+  sceneImg.src='assets/page'+(currentPage+1)+'.jpg';
   document.getElementById('rdText').innerHTML=pg.en;
   document.getElementById('rdTrans').textContent=pg.zh;
   document.getElementById('pgNum').textContent=(currentPage+1)+' / '+pages.length;
